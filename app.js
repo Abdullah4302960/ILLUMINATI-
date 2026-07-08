@@ -82,7 +82,27 @@ box.appendChild(card);
 
 });
 
+function shareInvite(){
 
+if(navigator.share){
+
+navigator.share({
+
+title:"ایلومیناتی | Illuminati",
+
+text:"به شبکه ایلومیناتی بپیوندید",
+
+url:window.location.href
+
+});
+
+}else{
+
+alert("لینک دعوت آماده اشتراک‌ گذاری است");
+
+}
+
+}
 }
 
 

@@ -273,3 +273,69 @@ localStorage.setItem("dailyScoreDate", today);
 alert("🎉 5 امتیاز ورود روزانه دریافت کردید");
 
 }
+// ساخت لینک دعوت
+
+function createInviteLink(){
+
+let userId = localStorage.getItem("userId");
+
+
+if(!userId){
+
+userId = Math.random().toString(36).substring(2,10);
+
+localStorage.setItem("userId", userId);
+
+}
+
+
+let link = window.location.href + "?invite=" + userId;
+
+
+let box = document.getElementById("invite-link");
+
+
+if(box){
+
+box.innerHTML = link;
+
+}
+
+}
+
+
+
+// اشتراک گذاری لینک
+
+function shareInvite(){
+
+let link = window.location.href + "?invite=" + localStorage.getItem("userId");
+
+
+if(navigator.share){
+
+navigator.share({
+
+title:"ایلومیناتی | Illuminati",
+
+text:"به اپلیکیشن ایلومیناتی بپیوندید",
+
+url:link
+
+});
+
+}else{
+
+alert(link);
+
+}
+
+}
+
+
+
+document.addEventListener("DOMContentLoaded",function(){
+
+createInviteLink();
+
+});

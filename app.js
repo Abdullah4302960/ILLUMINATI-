@@ -101,7 +101,32 @@ box.appendChild(card);
 
 function openChannel(link){
 
+let visitedChannels = JSON.parse(
+localStorage.getItem("visitedChannels") || "[]"
+);
+
+
+if(!visitedChannels.includes(link)){
+
+addScore(10);
+
+
+visitedChannels.push(link);
+
+localStorage.setItem(
+"visitedChannels",
+JSON.stringify(visitedChannels)
+);
+
+
+alert("🎉 10 امتیاز برای بازدید از کانال دریافت کردید");
+
+}
+
+
 window.open(link,"_blank");
+
+}
 
 }
 

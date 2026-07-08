@@ -599,3 +599,37 @@ showPage("home");
 
 
 }
+// دکمه دریافت امتیاز روزانه
+
+function dailyReward(){
+
+let lastReward = localStorage.getItem("lastReward");
+
+let today = new Date().toDateString();
+
+
+if(lastReward !== today){
+
+
+addScore(10);
+
+
+localStorage.setItem(
+"lastReward",
+today
+);
+
+
+alert("🎁 ۱۰ امتیاز روزانه دریافت کردی");
+
+
+}else{
+
+
+alert("امروز امتیاز خود را دریافت کرده‌ای");
+
+
+}
+
+
+}

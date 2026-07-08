@@ -1,278 +1,6 @@
 *{
 box-sizing:border-box;
-font-family:Tahoma, Arial, sans-serif;
-}
-
-
-body{
-
-margin:0;
-background:#050505;
-color:white;
-min-height:100vh;
-
-}
-
-
-
-.app{
-
-max-width:500px;
-margin:auto;
-min-height:100vh;
-padding-bottom:90px;
-
-}
-
-
-
-/* Header */
-
-.top{
-
-text-align:center;
-padding:35px 20px;
-
-background:
-linear-gradient(
-180deg,
-#16001f,
-#050505
-);
-
-border-bottom:1px solid #333;
-
-}
-
-
-.top h1{
-
-font-size:32px;
-margin:0;
-
-color:#ff3c8a;
-
-}
-
-
-.top p{
-
-color:#bbb;
-
-}
-
-
-
-
-/* Pages */
-
-.page{
-
-display:none;
-padding:20px;
-
-}
-
-
-.page.active{
-
-display:block;
-
-}
-
-
-
-
-/* Cards */
-
-.card{
-
-background:#111;
-
-border-radius:20px;
-
-padding:20px;
-
-margin-bottom:20px;
-
-border:1px solid #222;
-
-box-shadow:
-0 0 15px rgba(255,60,138,.15);
-
-}
-
-
-.card h3{
-
-color:#ff3c8a;
-
-}
-
-
-
-
-
-/* Buttons */
-
-button{
-
-background:#ff3c8a;
-
-color:white;
-
-border:none;
-
-padding:12px 20px;
-
-border-radius:30px;
-
-font-size:15px;
-
-cursor:pointer;
-
-}
-
-
-
-
-
-/* Channel cards */
-
-.channel{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-padding:15px;
-
-background:#0d0d0d;
-
-border-radius:18px;
-
-margin-bottom:15px;
-
-}
-
-
-.channel img{
-
-width:55px;
-
-height:55px;
-
-border-radius:50%;
-
-}
-
-
-
-
-/* Ranking */
-
-.rank{
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-background:#0b0b0b;
-
-padding:15px;
-
-border-radius:15px;
-
-margin:10px 0;
-
-}
-
-
-
-
-/* Avatar */
-
-.avatar{
-
-width:80px;
-
-height:80px;
-
-border-radius:50%;
-
-background:#ff3c8a;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:35px;
-
-margin:auto;
-
-}
-
-
-
-
-/* Bottom Menu */
-
-.menu{
-
-position:fixed;
-
-bottom:0;
-
-left:0;
-
-right:0;
-
-max-width:500px;
-
-margin:auto;
-
-height:75px;
-
-background:#090909;
-
-border-top:1px solid #222;
-
-display:flex;
-
-justify-content:space-around;
-
-align-items:center;
-
-}
-
-
-.menu button{
-
-background:none;
-
-font-size:13px;
-
-padding:5px;
-
-color:white;
-
-}
-
-
-.menu button:hover{
-
-color:#ff3c8a;
-
-}
-*{
-box-sizing:border-box;
-font-family:Tahoma, Arial, sans-serif;
+font-family:Tahoma,Arial,sans-serif;
 }
 
 
@@ -305,11 +33,7 @@ text-align:center;
 padding:35px 20px;
 
 background:
-linear-gradient(
-135deg,
-#111,
-#000
-);
+linear-gradient(135deg,#151515,#000);
 
 border-bottom:1px solid #222;
 
@@ -318,8 +42,8 @@ border-bottom:1px solid #222;
 
 .top h1{
 
-font-size:32px;
-letter-spacing:3px;
+font-size:35px;
+letter-spacing:4px;
 margin:0;
 
 }
@@ -328,12 +52,13 @@ margin:0;
 .top p{
 
 color:#aaa;
+font-size:14px;
 
 }
 
 
 
-/* PAGE */
+/* PAGES */
 
 .page{
 
@@ -356,11 +81,14 @@ display:block;
 .card{
 
 background:#111;
-border-radius:20px;
-padding:20px;
-margin-bottom:15px;
 
 border:1px solid #222;
+
+border-radius:20px;
+
+padding:20px;
+
+margin-bottom:15px;
 
 box-shadow:
 0 0 15px rgba(255,255,255,0.05);
@@ -368,20 +96,15 @@ box-shadow:
 }
 
 
-.card h3{
 
-margin-top:0;
-
-}
-
-
-
-/* CHANNEL CARDS */
+/* CHANNEL */
 
 .channel{
 
 display:flex;
+
 align-items:center;
+
 gap:15px;
 
 }
@@ -389,18 +112,21 @@ gap:15px;
 
 .channel-icon{
 
-width:55px;
-height:55px;
+width:60px;
+
+height:60px;
 
 border-radius:50%;
 
+background:#222;
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
 
-font-size:25px;
-
-background:#222;
+font-size:28px;
 
 }
 
@@ -410,14 +136,15 @@ background:#222;
 
 button{
 
-background:#fff;
-color:#000;
+background:white;
+
+color:black;
 
 border:none;
 
-padding:12px 20px;
-
 border-radius:30px;
+
+padding:12px 22px;
 
 font-size:15px;
 
@@ -453,13 +180,15 @@ margin:10px 0;
 
 .avatar{
 
-width:80px;
+width:85px;
 
-height:80px;
+height:85px;
 
 margin:auto;
 
 border-radius:50%;
+
+background:#222;
 
 display:flex;
 
@@ -469,13 +198,11 @@ justify-content:center;
 
 font-size:40px;
 
-background:#222;
-
 }
 
 
 
-/* BOTTOM MENU */
+/* MENU */
 
 .menu{
 
@@ -487,9 +214,9 @@ left:50%;
 
 transform:translateX(-50%);
 
-width:100%;
-
 max-width:500px;
+
+width:100%;
 
 height:75px;
 
@@ -506,15 +233,16 @@ align-items:center;
 }
 
 
+
 .menu button{
 
 background:none;
 
 color:white;
 
-padding:5px;
-
 font-size:13px;
+
+padding:5px;
 
 }
 

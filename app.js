@@ -1,1 +1,107 @@
 
+function showPage(pageId){
+
+let pages = document.querySelectorAll(".page");
+
+pages.forEach(function(page){
+
+page.classList.remove("active");
+
+});
+
+
+let selected = document.getElementById(pageId);
+
+
+if(selected){
+
+selected.classList.add("active");
+
+}
+
+}
+
+
+
+const channels = [
+
+{
+name:"❤️‍🩹 هیچی Haechy❤️‍🩹",
+link:"https://whatsapp.com/channel/0029Vb83ghH3QxRzgDtZon20"
+},
+
+{
+name:"📖 Sar Zamine Qessa Ha",
+link:"https://whatsapp.com/channel/0029Vb7NT0HBKfi8U61rIj17"
+},
+
+{
+name:"🕋 ﷽ ندای ایمان 🕋",
+link:"https://whatsapp.com/channel/0029Vb7Q858Chq6DfFnIEG2B"
+},
+
+{
+name:"🌍 Gₑₙₑᵣₐₗ ₍Iₙfₒᵣₘₐₜᵢₒₙ",
+link:"https://whatsapp.com/channel/0029Vb7YHqND8SDu7Ds9Ym0K"
+}
+
+];
+
+
+
+function loadChannels(){
+
+let box = document.getElementById("channel-list");
+
+
+channels.forEach(function(channel){
+
+
+let card = document.createElement("div");
+
+card.className="card";
+
+
+card.innerHTML = `
+
+<h3>${channel.name}</h3>
+
+<button onclick="openChannel('${channel.link}')">
+
+ورود به کانال
+
+</button>
+
+`;
+
+
+
+box.appendChild(card);
+
+
+
+});
+
+
+}
+
+
+
+
+function openChannel(link){
+
+window.open(link,"_blank");
+
+}
+
+
+
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+loadChannels();
+
+}
+);

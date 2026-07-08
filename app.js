@@ -97,11 +97,13 @@ window.open(link,"_blank");
 
 
 
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+document.addEventListener("DOMContentLoaded", function(){
 
-loadChannels();
+let box = document.getElementById("channel-list");
 
+if(box){
+    box.innerHTML = "";
+    loadChannels();
 }
-);
+
+});

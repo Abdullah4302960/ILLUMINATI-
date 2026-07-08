@@ -310,3 +310,35 @@ margin-top:10px;
 background:#fff;
 
 }
+.menu button:hover,
+.menu button:focus{
+
+color:#d4af37;
+
+}
+
+
+.menu button.active{
+
+color:#d4af37;
+
+}
+
+
+.invite-btn{
+
+background:#d4af37;
+
+color:#000;
+
+border:none;
+
+padding:12px 25px;
+
+border-radius:30px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+  }

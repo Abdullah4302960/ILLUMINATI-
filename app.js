@@ -155,7 +155,7 @@ function showInviteInfo(type){
 
 if(type==="link"){
 
-alert("🔗 لینک دعوت شما آماده است:\n"+window.location.href);
+alert("🔗 لینک دعوت ایلومیناتی آماده است.\n\nدوستان خود را دعوت کنید و امتیاز کسب نمایید.");
 
 }
 

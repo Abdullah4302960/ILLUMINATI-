@@ -216,7 +216,9 @@ transform:translateY(0);
 
 }
 
-}#channel-list{
+}
+
+#channel-list{
 display:flex;
 flex-direction:column;
 gap:15px;
@@ -342,14 +344,13 @@ font-weight:bold;
 cursor:pointer;
 
   }
-.menu button.active{
+..menu button.active{
 
 color:#d4af37;
 
 transform:translateY(-5px);
 
 }
-
 
 .menu button.active span{
 

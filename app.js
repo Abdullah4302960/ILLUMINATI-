@@ -339,3 +339,53 @@ document.addEventListener("DOMContentLoaded",function(){
 createInviteLink();
 
 });
+// بررسی لینک دعوت
+
+function checkInvite(){
+
+let params = new URLSearchParams(window.location.search);
+
+let inviter = params.get("invite");
+
+
+if(inviter){
+
+let myId = localStorage.getItem("userId");
+
+
+// جلوگیری از دعوت خود
+
+if(inviter !== myId){
+
+
+let usedInvite = localStorage.getItem("usedInvite");
+
+
+if(!usedInvite){
+
+
+addScore(50);
+
+
+localStorage.setItem("usedInvite", inviter);
+
+
+alert("🎉 شما با لینک دعوت وارد شدید و 50 امتیاز دریافت کردید");
+
+
+}
+
+
+}
+
+}
+
+}
+
+
+
+document.addEventListener("DOMContentLoaded",function(){
+
+checkInvite();
+
+});

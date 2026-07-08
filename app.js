@@ -224,3 +224,27 @@ addScore(50);
 alert("👥 50 امتیاز دعوت به حساب شما اضافه شد");
 
 }
+function dailyScore(){
+
+let today = new Date().toDateString();
+
+let lastDaily = localStorage.getItem("dailyScoreDate");
+
+
+if(lastDaily === today){
+
+alert("⏳ امتیاز روزانه را امروز دریافت کرده‌اید");
+
+return;
+
+}
+
+
+addScore(5);
+
+localStorage.setItem("dailyScoreDate", today);
+
+
+alert("🎉 5 امتیاز ورود روزانه دریافت کردید");
+
+}

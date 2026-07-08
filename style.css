@@ -342,3 +342,17 @@ font-weight:bold;
 cursor:pointer;
 
   }
+.menu button.active{
+
+color:#d4af37;
+
+transform:translateY(-5px);
+
+}
+
+
+.menu button.active span{
+
+color:#d4af37;
+
+}

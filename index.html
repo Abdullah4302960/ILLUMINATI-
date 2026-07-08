@@ -1,52 +1,206 @@
-<!-- SCORE PAGE -->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
-<section id="scores" class="page">
+<head>
 
-<h2>🏆 امتیازات</h2>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ILLUMINATI</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+<!-- HOME PAGE -->
+
+<section id="home" class="page active">
+
+<div class="top">
+
+<h1>ILLUMINATI</h1>
+
+<p>
+دنیای احساس، داستان و دانستنی
+</p>
+
+</div>
+
+
 
 <div class="card">
 
-<h3>رتبه بندی فالورها</h3>
+<h3>🖤 Welcome</h3>
 
-<div class="rank">
-
-<span>🥇</span>
-<p>کاربر اول</p>
-<b>1200 امتیاز</b>
+<p>
+به اپلیکیشن رسمی ILLUMINATI خوش آمدید.
+</p>
 
 </div>
 
 
-<div class="rank">
 
-<span>🥈</span>
-<p>کاربر دوم</p>
-<b>900 امتیاز</b>
+<div class="card channel">
+
+<div class="channel-icon">
+❤️‍🩹
+</div>
+
+<div>
+
+<h3>هیچی Haechy</h3>
+
+<p>
+دنیای عاشقانه و احساسی
+</p>
+
+</div>
 
 </div>
 
 
-<div class="rank">
 
-<span>🥉</span>
-<p>کاربر سوم</p>
-<b>700 امتیاز</b>
+<div class="card channel">
+
+<div class="channel-icon">
+📖
+</div>
+
+<div>
+
+<h3>سرزمین قصه ها</h3>
+
+<p>
+داستان های جذاب
+</p>
 
 </div>
 
 </div>
+
+
+
+<div class="card channel">
+
+<div class="channel-icon">
+🕋
+</div>
+
+<div>
+
+<h3>ندای ایمان</h3>
+
+<p>
+معلومات اسلامی
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="card channel">
+
+<div class="channel-icon">
+🌍
+</div>
+
+<div>
+
+<h3>General Information</h3>
+
+<p>
+دانستنی های عمومی
+</p>
+
+</div>
+
+</div>
+
 
 </section>
 
 
 
+
+
+<!-- SCORE PAGE -->
+
+<section id="scores" class="page">
+
+
+<h2>🏆 امتیازات</h2>
+
+
+<div class="card">
+
+
+<h3>رتبه بندی فالورها</h3>
+
+
+<div class="rank">
+
+<span>🥇</span>
+
+<p>کاربر اول</p>
+
+<b>1200 امتیاز</b>
+
+</div>
+
+
+
+<div class="rank">
+
+<span>🥈</span>
+
+<p>کاربر دوم</p>
+
+<b>900 امتیاز</b>
+
+</div>
+
+
+
+<div class="rank">
+
+<span>🥉</span>
+
+<p>کاربر سوم</p>
+
+<b>700 امتیاز</b>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
 <!-- INVITE PAGE -->
+
 
 <section id="invite" class="page">
 
+
 <h2>🔗 دعوت دوستان</h2>
 
+
 <div class="card">
+
 
 <p>
 دوستان خود را دعوت کنید و امتیاز دریافت کنید.
@@ -54,44 +208,63 @@
 
 
 <button onclick="copyInvite()">
+
 کپی لینک دعوت
+
 </button>
 
 
+
 <p id="inviteText">
+
 https://illuminati-app.github.io/invite
+
 </p>
 
 
 </div>
+
 
 </section>
 
 
 
+
+
 <!-- PROFILE PAGE -->
 
+
 <section id="profile" class="page">
+
 
 <h2>👤 پروفایل</h2>
 
 
+
 <div class="card">
 
+
 <div class="avatar">
+
 ❤️
+
 </div>
 
 
-<h3>نام کاربر</h3>
+<h3>
+نام کاربر
+</h3>
+
 
 <p>
 سطح: تازه وارد
 </p>
 
+
 <p>
-امتیاز: 0
+امتیاز: <span id="userScore">0</span>
 </p>
+
 
 <p>
 تعداد دعوت: 0
@@ -100,54 +273,91 @@ https://illuminati-app.github.io/invite
 
 </div>
 
+
 </section>
+
+
+
 
 
 <!-- BOTTOM MENU -->
 
+
 <nav class="menu">
 
+
 <button onclick="showPage('home')">
+
 🏠
 <br>
 خانه
+
 </button>
+
 
 
 <button onclick="showPage('scores')">
+
 🏆
 <br>
 امتیاز
+
 </button>
+
 
 
 <button onclick="showPage('invite')">
+
 🔗
 <br>
 دعوت
+
 </button>
 
 
+
 <button onclick="showPage('profile')">
+
 👤
 <br>
 پروفایل
+
 </button>
 
 
 </nav>
 
 
+
+</div>
+
+
+
+<script src="app.js"></script>
+
+
 <script>
+
 
 function copyInvite(){
 
+
 let text=document.getElementById("inviteText").innerText;
+
 
 navigator.clipboard.writeText(text);
 
+
 alert("لینک دعوت کپی شد");
+
 
 }
 
+
 </script>
+
+
+
+</body>
+
+</html>

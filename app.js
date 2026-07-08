@@ -493,3 +493,109 @@ showPage("home");
 
 
 }
+function showPage(pageId){
+
+
+let pages = document.querySelectorAll(".page");
+
+
+pages.forEach(function(page){
+
+page.classList.remove("active");
+
+});
+
+
+let selected = document.getElementById(pageId);
+
+
+if(selected){
+
+selected.classList.add("active");
+
+}
+
+
+}
+
+
+
+
+// امتیاز کاربر
+
+let userScore = localStorage.getItem("userScore");
+
+
+if(userScore === null){
+
+userScore = 0;
+
+localStorage.setItem("userScore",0);
+
+}
+
+
+
+function addScore(number){
+
+
+userScore = Number(userScore) + number;
+
+
+localStorage.setItem("userScore",userScore);
+
+
+
+let score = document.getElementById("userScore");
+
+
+if(score){
+
+score.innerText = userScore;
+
+}
+
+
+}
+
+
+
+
+// لینک دعوت
+
+function createInvite(){
+
+
+let inviteLink = window.location.href + "?invite=true";
+
+
+navigator.clipboard.writeText(inviteLink);
+
+
+alert("لینک دعوت شما کپی شد");
+
+
+}
+
+
+
+
+// هنگام باز شدن برنامه
+
+window.onload = function(){
+
+
+let score = document.getElementById("userScore");
+
+
+if(score){
+
+score.innerText = userScore;
+
+}
+
+
+showPage("home");
+
+
+}

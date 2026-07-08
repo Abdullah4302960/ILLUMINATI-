@@ -151,3 +151,26 @@ if(box){
 }
 
 });
+function showInviteInfo(type){
+
+if(type==="link"){
+
+alert("🔗 لینک دعوت شما آماده است:\n"+window.location.href);
+
+}
+
+
+if(type==="stats"){
+
+alert("⭐ آمار دعوت شما:\n\nتعداد دعوت موفق: 0\nامتیاز: 0");
+
+}
+
+
+if(type==="points"){
+
+alert("🎁 روش‌ های کسب امتیاز:\n\n📢 دعوت دوستان\n❤️ حمایت از کانال‌ ها\n⭐ فعالیت در برنامه");
+
+}
+
+}

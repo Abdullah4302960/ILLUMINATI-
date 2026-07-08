@@ -146,3 +146,56 @@ loadChannels();
 }
 
 });
+// سیستم امتیاز
+
+let userScore = localStorage.getItem("userScore");
+
+
+if(userScore === null){
+
+userScore = 0;
+
+localStorage.setItem("userScore", userScore);
+
+}
+
+
+
+// نمایش امتیاز
+
+function updateScore(){
+
+let scoreBox = document.getElementById("user-score");
+
+
+if(scoreBox){
+
+scoreBox.innerHTML = userScore + " امتیاز";
+
+}
+
+}
+
+
+
+// اضافه کردن امتیاز
+
+function addScore(amount){
+
+userScore = Number(userScore) + amount;
+
+localStorage.setItem("userScore", userScore);
+
+updateScore();
+
+}
+
+
+
+// امتیاز ورود روزانه
+
+document.addEventListener("DOMContentLoaded", function(){
+
+updateScore();
+
+});

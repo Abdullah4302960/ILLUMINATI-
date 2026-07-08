@@ -150,30 +150,8 @@ if(box){
     loadChannels();
 }
 
-});
-function showInviteInfo(type){
-
-if(type==="link"){
-
-alert("🔗 لینک دعوت ایلومیناتی آماده است.\n\nدوستان خود را دعوت کنید و امتیاز کسب نمایید.");
-
 }
 
-
-if(type==="stats"){
-
-alert("⭐ آمار دعوت شما:\n\nتعداد دعوت موفق: 0\nامتیاز: 0");
-
-}
-
-
-if(type==="points"){
-
-alert("🎁 روش‌ های کسب امتیاز:\n\n📢 دعوت دوستان\n❤️ حمایت از کانال‌ ها\n⭐ فعالیت در برنامه");
-
-}
-
-}
 function showInviteInfo(type){
 
 if(type === "link"){

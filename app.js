@@ -199,3 +199,28 @@ document.addEventListener("DOMContentLoaded", function(){
 updateScore();
 
 });
+function dailyScore(){
+
+addScore(5);
+
+alert("🎉 5 امتیاز برای ورود روزانه دریافت کردید");
+
+}
+
+
+function channelScore(){
+
+addScore(10);
+
+alert("📚 10 امتیاز برای حمایت از کانال‌ ها دریافت کردید");
+
+}
+
+
+function inviteScore(){
+
+addScore(50);
+
+alert("👥 50 امتیاز دعوت به حساب شما اضافه شد");
+
+}

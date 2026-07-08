@@ -31,7 +31,7 @@ link:"https://whatsapp.com/channel/0029Vb83ghH3QxRzgDtZon20"
 },
 
 {
-name:" Sar Zamine Qessa Ha",
+name:"Sar Zamine Qessa Ha",
 link:"https://whatsapp.com/channel/0029Vb7NT0HBKfi8U61rIj17"
 },
 

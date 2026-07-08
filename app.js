@@ -1,60 +1,130 @@
+// ======================
+// Illuminati v2
+// بخش اول
+// ======================
+
+// صفحات
+
 function showPage(pageId){
 
-let pages = document.querySelectorAll(".page");
+document.querySelectorAll(".page").forEach(function(page){
 
-pages.forEach(function(page){
-    page.classList.remove("active");
+page.classList.remove("active");
+
 });
 
+let page=document.getElementById(pageId);
 
-let buttons = document.querySelectorAll(".menu button");
+if(page){
 
-buttons.forEach(function(btn){
-    btn.classList.remove("active");
-});
+page.classList.add("active");
 
-
-let selected = document.getElementById(pageId);
-
-if(selected){
-    selected.classList.add("active");
 }
 
+document.querySelectorAll(".menu button").forEach(function(btn){
 
-let activeButton = document.querySelector(
-    `.menu button[data-page="${pageId}"]`
+btn.classList.remove("active");
+
+});
+
+let active=document.querySelector(
+'.menu button[data-page="'+pageId+'"]'
 );
 
+if(active){
 
-if(activeButton){
-    activeButton.classList.add("active");
-}
-
+active.classList.add("active");
 
 }
 
+}
 
 
-const channels = [
+
+// ======================
+// سیستم امتیاز
+// ======================
+
+let score=Number(localStorage.getItem("score"))||0;
+
+function saveScore(){
+
+localStorage.setItem("score",score);
+
+updateScore();
+
+}
+
+
+
+function updateScore(){
+
+let scoreBox=document.getElementById("user-score");
+
+if(scoreBox){
+
+scoreBox.innerHTML=score+" امتیاز";
+
+}
+
+let profileScore=document.getElementById("profile-score");
+
+if(profileScore){
+
+profileScore.innerHTML=score+" امتیاز";
+
+}
+
+}
+
+
+
+function addScore(value){
+
+score+=value;
+
+saveScore();
+
+}
+
+
+
+// ======================
+// کانال ها
+// ======================
+
+const channels=[
 
 {
-name:"هیچی Haechy❤️‍🩹",
+
+name:"❤️‍🩹 هیچی Haechy",
+
 link:"https://whatsapp.com/channel/0029Vb83ghH3QxRzgDtZon20"
+
 },
 
 {
+
 name:"📖 Sar Zamine Qessa Ha",
+
 link:"https://whatsapp.com/channel/0029Vb7NT0HBKfi8U61rIj17"
+
 },
 
 {
-name:"🕋 ﷽ ندای ایمان",
+
+name:"🕋 ندای ایمان",
+
 link:"https://whatsapp.com/channel/0029Vb7Q858Chq6DfFnIEG2B"
+
 },
 
 {
-name:"🌍 Gₑₙₑᵣₐₗ ₍Iₙfₒᵣₘₐₜᵢₒₙ",
+
+name:"🌍 General Information",
+
 link:"https://whatsapp.com/channel/0029Vb7YHqND8SDu7Ds9Ym0K"
+
 }
 
 ];
@@ -63,20 +133,17 @@ link:"https://whatsapp.com/channel/0029Vb7YHqND8SDu7Ds9Ym0K"
 
 function loadChannels(){
 
-let box = document.getElementById("channel-list");
+let box=document.getElementById("channel-list");
 
-if(!box) return;
+if(!box)return;
 
+box.innerHTML="";
 
 channels.forEach(function(channel){
 
+box.innerHTML+=`
 
-let card = document.createElement("div");
-
-card.className="channel-card";
-
-
-card.innerHTML = `
+<div class="channel-card">
 
 <h3>${channel.name}</h3>
 
@@ -86,504 +153,39 @@ card.innerHTML = `
 
 </button>
 
-`;
-
-
-box.appendChild(card);
-
-
-});
-
-}
-
-
-
-
-function openChannel(link){
-
-let visitedChannels = JSON.parse(
-localStorage.getItem("visitedChannels") || "[]"
-);
-
-
-if(!visitedChannels.includes(link)){
-
-addScore(10);
-
-
-visitedChannels.push(link);
-
-localStorage.setItem(
-"visitedChannels",
-JSON.stringify(visitedChannels)
-);
-
-
-alert("🎉 10 امتیاز برای بازدید از کانال دریافت کردید");
-
-}
-
-
-window.open(link,"_blank");
-
-}
-
-}
-
-
-
-
-function shareInvite(){
-
-if(navigator.share){
-
-navigator.share({
-
-title:"ایلومیناتی | Illuminati",
-
-text:"به شبکه ایلومیناتی بپیوندید",
-
-url:window.location.href
-
-});
-
-}else{
-
-alert("لینک دعوت آماده اشتراک‌ گذاری است");
-
-}
-
-}
-
-
-
-
-document.addEventListener("DOMContentLoaded", function(){
-
-let box = document.getElementById("channel-list");
-
-if(box){
-
-box.innerHTML = "";
-
-loadChannels();
-
-}
-
-});
-// سیستم امتیاز
-
-let userScore = localStorage.getItem("userScore");
-
-
-if(userScore === null){
-
-userScore = 0;
-
-localStorage.setItem("userScore", userScore);
-
-}
-
-
-
-// نمایش امتیاز
-
-function updateScore(){
-
-let scoreBox = document.getElementById("user-score");
-
-
-if(scoreBox){
-
-scoreBox.innerHTML = userScore + " امتیاز";
-
-}
-
-}
-
-
-
-// اضافه کردن امتیاز
-
-function addScore(amount){
-
-userScore = Number(userScore) + amount;
-
-localStorage.setItem("userScore", userScore);
-
-updateScore();
-
-}
-
-
-
-// امتیاز ورود روزانه
-
-document.addEventListener("DOMContentLoaded", function(){
-
-updateScore();
-
-});
-function dailyScore(){
-
-addScore(5);
-
-alert("🎉 5 امتیاز برای ورود روزانه دریافت کردید");
-
-}
-
-
-function channelScore(){
-
-addScore(10);
-
-alert("📚 10 امتیاز برای حمایت از کانال‌ ها دریافت کردید");
-
-}
-
-
-function inviteScore(){
-
-addScore(50);
-
-alert("👥 50 امتیاز دعوت به حساب شما اضافه شد");
-
-}
-function dailyScore(){
-
-let today = new Date().toDateString();
-
-let lastDaily = localStorage.getItem("dailyScoreDate");
-
-
-if(lastDaily === today){
-
-alert("⏳ امتیاز روزانه را امروز دریافت کرده‌اید");
-
-return;
-
-}
-
-
-addScore(5);
-
-localStorage.setItem("dailyScoreDate", today);
-
-
-alert("🎉 5 امتیاز ورود روزانه دریافت کردید");
-
-}
-// ساخت لینک دعوت
-
-function createInviteLink(){
-
-let userId = localStorage.getItem("userId");
-
-
-if(!userId){
-
-userId = Math.random().toString(36).substring(2,10);
-
-localStorage.setItem("userId", userId);
-
-}
-
-
-let link = window.location.href + "?invite=" + userId;
-
-
-let box = document.getElementById("invite-link");
-
-
-if(box){
-
-box.innerHTML = link;
-
-}
-
-}
-
-
-
-// اشتراک گذاری لینک
-
-function shareInvite(){
-
-let link = window.location.href + "?invite=" + localStorage.getItem("userId");
-
-
-if(navigator.share){
-
-navigator.share({
-
-title:"ایلومیناتی | Illuminati",
-
-text:"به اپلیکیشن ایلومیناتی بپیوندید",
-
-url:link
-
-});
-
-}else{
-
-alert(link);
-
-}
-
-}
-
-
-
-document.addEventListener("DOMContentLoaded",function(){
-
-createInviteLink();
-
-});
-// بررسی لینک دعوت
-
-function checkInvite(){
-
-let params = new URLSearchParams(window.location.search);
-
-let inviter = params.get("invite");
-
-
-if(inviter){
-
-let myId = localStorage.getItem("userId");
-
-
-// جلوگیری از دعوت خود
-
-if(inviter !== myId){
-
-
-let usedInvite = localStorage.getItem("usedInvite");
-
-
-if(!usedInvite){
-
-
-addScore(50);
-
-
-localStorage.setItem("usedInvite", inviter);
-
-
-alert("🎉 شما با لینک دعوت وارد شدید و 50 امتیاز دریافت کردید");
-
-
-}
-
-
-}
-
-}
-
-}
-
-
-
-document.addEventListener("DOMContentLoaded",function(){
-
-checkInvite();
-
-});
-// نمایش اطلاعات پروفایل
-
-function loadProfile(){
-
-let id = localStorage.getItem("userId");
-
-let score = localStorage.getItem("userScore") || 0;
-
-let invites = localStorage.getItem("invites") || 0;
-
-
-let rank = "تازه وارد";
-
-
-if(score >= 1000){
-
-rank = "👑 طلایی";
-
-}else if(score >= 500){
-
-rank = "🥈 نقره‌ ای";
-
-}else if(score >= 100){
-
-rank = "🥉 برنزی";
-
-}
-
-
-
-let idBox = document.getElementById("profile-id");
-let scoreBox = document.getElementById("profile-score");
-let inviteBox = document.getElementById("profile-invites");
-let rankBox = document.getElementById("profile-rank");
-
-
-if(idBox){
-
-idBox.innerHTML = id;
-
-}
-
-
-if(scoreBox){
-
-scoreBox.innerHTML = score + " امتیاز";
-
-}
-
-
-if(inviteBox){
-
-inviteBox.innerHTML = invites + " دعوت";
-
-}
-
-
-if(rankBox){
-
-rankBox.innerHTML = rank;
-
-}
-
-}
-
-
-
-document.addEventListener("DOMContentLoaded",function(){
-
-loadProfile();
-
-});
-// سیستم رتبه بندی
-
-function loadRanking(){
-
-let users = JSON.parse(
-localStorage.getItem("users") || "[]"
-);
-
-
-let myId = localStorage.getItem("userId");
-
-let myScore = Number(
-localStorage.getItem("userScore") || 0
-);
-
-
-// ذخیره کاربر فعلی
-
-let found = users.find(user => user.id === myId);
-
-
-if(found){
-
-found.score = myScore;
-
-}else{
-
-let myName = localStorage.getItem("userName") || "کاربر";
-
-
-users.push({
-
-id: myId,
-
-name: myName,
-
-score: myScore
-
-});
-
-}
-
-
-users.sort(function(a,b){
-
-return b.score - a.score;
-
-});
-
-
-let box = document.getElementById("ranking-list");
-
-
-if(box){
-
-box.innerHTML = "";
-
-
-users.slice(0,3).forEach(function(user,index){
-
-
-let medal = "";
-
-
-if(index === 0){
-
-medal = "🥇";
-
-}else if(index === 1){
-
-medal = "🥈";
-
-}else{
-
-medal = "🥉";
-
-}
-
-
-
-box.innerHTML += `
-
-<div class="rank">
-
-${medal} کاربر ${user.id}
-
-<br>
-
-${user.score} امتیاز
-
 </div>
 
 `;
 
 });
 
-
-}
-
-
-localStorage.setItem(
-"users",
-JSON.stringify(users)
-);
-
-
 }
 
 
 
-document.addEventListener("DOMContentLoaded",function(){
+function openChannel(link){
 
-loadRanking();
+window.open(link,"_blank");
 
-});
-// ذخیره نام کاربر
+addScore(10);
+
+}
+// ======================
+// پروفایل کاربر
+// ======================
+
 
 function saveName(){
 
-let name = document.getElementById("user-name").value;
+let input=document.getElementById("user-name");
+
+if(!input)return;
 
 
-if(name.trim() === ""){
+let name=input.value.trim();
+
+
+if(name===""){
 
 alert("لطفاً نام خود را وارد کنید");
 
@@ -592,40 +194,195 @@ return;
 }
 
 
-localStorage.setItem("userName", name);
-
-
-alert("✅ نام شما ذخیره شد");
+localStorage.setItem("userName",name);
 
 
 loadProfile();
 
-}
 
-
-
-// بارگذاری نام در پروفایل
-
-function loadName(){
-
-let name = localStorage.getItem("userName") || "";
-
-
-let input = document.getElementById("user-name");
-
-
-if(input){
-
-input.value = name;
-
-}
+alert("✅ نام ذخیره شد");
 
 }
 
 
 
-document.addEventListener("DOMContentLoaded",function(){
+function loadProfile(){
 
-loadName();
+let name=localStorage.getItem("userName") || "کاربر";
+
+let nameBox=document.getElementById("user-name");
+
+
+if(nameBox){
+
+nameBox.value=name;
+
+}
+
+
+let profileName=document.getElementById("profile-name");
+
+
+if(profileName){
+
+profileName.innerHTML=name;
+
+}
+
+
+updateScore();
+
+}
+
+
+
+// ======================
+// شناسه کاربر
+// ======================
+
+
+function createUserId(){
+
+let id=localStorage.getItem("userId");
+
+
+if(!id){
+
+id=Math.random()
+.toString(36)
+.substring(2,10);
+
+
+localStorage.setItem(
+"userId",
+id
+);
+
+}
+
+
+return id;
+
+}
+
+
+
+// ======================
+// لینک دعوت
+// ======================
+
+
+function createInviteLink(){
+
+let id=createUserId();
+
+
+let link=
+window.location.origin+
+window.location.pathname+
+"?invite="+id;
+
+
+
+let box=document.getElementById("invite-link");
+
+
+if(box){
+
+box.innerHTML=link;
+
+}
+
+
+}
+
+
+
+function shareInvite(){
+
+let link=
+window.location.origin+
+window.location.pathname+
+"?invite="+createUserId();
+
+
+
+if(navigator.share){
+
+
+navigator.share({
+
+title:"Illuminati",
+
+text:"به ایلومیناتی بپیوندید",
+
+url:link
 
 });
+
+
+}else{
+
+
+navigator.clipboard.writeText(link);
+
+alert("لینک دعوت کپی شد");
+
+}
+
+}
+
+
+
+// ======================
+// بررسی دعوت
+// ======================
+
+
+function checkInvite(){
+
+
+let params=
+new URLSearchParams(
+window.location.search
+);
+
+
+let inviter=params.get("invite");
+
+
+
+if(inviter){
+
+
+let used=
+localStorage.getItem(
+"inviteUsed"
+);
+
+
+
+if(!used){
+
+
+addScore(50);
+
+
+localStorage.setItem(
+"inviteUsed",
+inviter
+);
+
+
+
+alert(
+"🎉 50 امتیاز دعوت دریافت کردید"
+);
+
+
+}
+
+}
+
+
+}

@@ -10,6 +10,16 @@ page.classList.remove("active");
 });
 
 
+let buttons = document.querySelectorAll(".menu button");
+
+buttons.forEach(function(btn){
+
+btn.classList.remove("active");
+
+});
+
+
+
 let selected = document.getElementById(pageId);
 
 
@@ -18,6 +28,20 @@ if(selected){
 selected.classList.add("active");
 
 }
+
+
+
+let activeButton = document.querySelector(
+'.menu button[onclick="showPage(\''+pageId+'\')"]'
+);
+
+
+if(activeButton){
+
+activeButton.classList.add("active");
+
+}
+
 
 }
 

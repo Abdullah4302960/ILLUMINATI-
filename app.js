@@ -389,3 +389,75 @@ document.addEventListener("DOMContentLoaded",function(){
 checkInvite();
 
 });
+// نمایش اطلاعات پروفایل
+
+function loadProfile(){
+
+let id = localStorage.getItem("userId");
+
+let score = localStorage.getItem("userScore") || 0;
+
+let invites = localStorage.getItem("invites") || 0;
+
+
+let rank = "تازه وارد";
+
+
+if(score >= 1000){
+
+rank = "👑 طلایی";
+
+}else if(score >= 500){
+
+rank = "🥈 نقره‌ ای";
+
+}else if(score >= 100){
+
+rank = "🥉 برنزی";
+
+}
+
+
+
+let idBox = document.getElementById("profile-id");
+let scoreBox = document.getElementById("profile-score");
+let inviteBox = document.getElementById("profile-invites");
+let rankBox = document.getElementById("profile-rank");
+
+
+if(idBox){
+
+idBox.innerHTML = id;
+
+}
+
+
+if(scoreBox){
+
+scoreBox.innerHTML = score + " امتیاز";
+
+}
+
+
+if(inviteBox){
+
+inviteBox.innerHTML = invites + " دعوت";
+
+}
+
+
+if(rankBox){
+
+rankBox.innerHTML = rank;
+
+}
+
+}
+
+
+
+document.addEventListener("DOMContentLoaded",function(){
+
+loadProfile();
+
+});

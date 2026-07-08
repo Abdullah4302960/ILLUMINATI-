@@ -461,3 +461,113 @@ document.addEventListener("DOMContentLoaded",function(){
 loadProfile();
 
 });
+// سیستم رتبه بندی
+
+function loadRanking(){
+
+let users = JSON.parse(
+localStorage.getItem("users") || "[]"
+);
+
+
+let myId = localStorage.getItem("userId");
+
+let myScore = Number(
+localStorage.getItem("userScore") || 0
+);
+
+
+// ذخیره کاربر فعلی
+
+let found = users.find(user => user.id === myId);
+
+
+if(found){
+
+found.score = myScore;
+
+}else{
+
+users.push({
+
+id: myId,
+
+score: myScore
+
+});
+
+}
+
+
+users.sort(function(a,b){
+
+return b.score - a.score;
+
+});
+
+
+let box = document.getElementById("ranking-list");
+
+
+if(box){
+
+box.innerHTML = "";
+
+
+users.slice(0,3).forEach(function(user,index){
+
+
+let medal = "";
+
+
+if(index === 0){
+
+medal = "🥇";
+
+}else if(index === 1){
+
+medal = "🥈";
+
+}else{
+
+medal = "🥉";
+
+}
+
+
+
+box.innerHTML += `
+
+<div class="rank">
+
+${medal} کاربر ${user.id}
+
+<br>
+
+${user.score} امتیاز
+
+</div>
+
+`;
+
+});
+
+
+}
+
+
+localStorage.setItem(
+"users",
+JSON.stringify(users)
+);
+
+
+}
+
+
+
+document.addEventListener("DOMContentLoaded",function(){
+
+loadRanking();
+
+});

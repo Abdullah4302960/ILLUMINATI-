@@ -174,3 +174,24 @@ alert("🎁 روش‌ های کسب امتیاز:\n\n📢 دعوت دوستان\
 }
 
 }
+function showInviteInfo(type){
+
+if(type === "link"){
+
+alert("🔗 لینک دعوت شما آماده است:\n" + window.location.href);
+
+}
+
+else if(type === "stats"){
+
+alert("⭐ آمار دعوت:\n\nتعداد دعوت موفق: 0\nامتیاز فعلی: 0");
+
+}
+
+else if(type === "points"){
+
+alert("🎁 روش‌ های کسب امتیاز:\n\n📢 دعوت دوستان\n❤️ حمایت از کانال‌ ها\n⭐ فعالیت در برنامه");
+
+}
+
+}

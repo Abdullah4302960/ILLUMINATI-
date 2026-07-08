@@ -1,270 +1,76 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ایلومیناتی | Illuminati</title>
-
-<link rel="stylesheet" href="style.css">
-
-</head>
-
-
-<body>
-
-
-<div class="app">
-
-
-<header class="top">
-<h1>🌌 ایلومیناتی</h1>
-<p>Illuminati</p>
-
-<span>
-دروازه‌ِ به دنیای عشق، داستان، ایمان و دانش
-</span>
-
-</header>
-
-
-
-<main id="content">
-
-
-<section id="channels" class="page">
-
-<h2>📚 کانال‌ های ما</h2>
-
-<p>
-چهار کانال، چهار دنیای متفاوت
-</p>
-
-
-<div id="channel-list">
-
-<!-- کانال‌ ها در مرحله بعد اضافه می‌ شوند -->
-
-</div>
-
-
-</section>
-
-
-<section id="home" class="page active">
-
-<h2>🏠 خانه</h2>
-
-
-<div class="card home-welcome">
-
-<h3>🌌 به ایلومیناتی خوش آمدید</h3>
-
-<p>
-چهار کانال، چهار دنیای متفاوت؛
-<br>
-عشق، داستان، ایمان و دانش
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>✨ ویژه امروز</h3>
-
-<p>
-هر روز با نوشته‌ های تازه، داستان‌ های زیبا،
-معلومات مفید و مطالب الهام‌ بخش همراه شما هستیم.
-</p>
-
-</div>
-
-
-
-
-<div class="card emotion">
-
-<h3>❤️‍🩹 دنیای احساس</h3>
-
-<p>
-گاهی یک جمله کوتاه می‌ تواند
-حرف‌ های نا گفته یک قلب را بیان کند.
-</p>
-
-</div>
-  
-
-
-
-<div class="card stories">
-
-<h3>📖 دنیایی قصه ها و پند</h3>
-
-<p>
-داستان‌ های کوتاه و بلند،
-روایت‌ های جذاب و دنیایی از خیال و احساس.
-</p>
-
-</div>
-
-
-
-
-<div class="card faith">
-
-<h3>🕋 پنجرهِ به سوی ایمان</h3>
-
-<p>
-دانش و آگاهی، راهی برای نزدیک شدن به حقیقت است.
-</p>
-
-</div>
-
-
-
-
-<div class="card knowledge">
-
-<h3>🌍پنجرهِ به سوی جهان </h3>
-
-<p>
-هر روز چیز های تازه‌ِ برای یاد گرفتن وجود دارد.
-</p>
-
-</div>
-
-
-</section>
-
-
+<!-- SCORE PAGE -->
 
 <section id="scores" class="page">
 
 <h2>🏆 امتیازات</h2>
 
-
 <div class="card">
 
-<h3>⭐ امتیاز فعلی شما</h3>
+<h3>رتبه بندی فالورها</h3>
 
-<p class="score-number" id="user-score">
-0 امتیاز
-</p>
+<div class="rank">
 
-<p>
-با فعالیت بیشتر، دعوت دوستان و حمایت از کانال‌ ها امتیاز کسب کنید.
-</p>
+<span>🥇</span>
+<p>کاربر اول</p>
+<b>1200 امتیاز</b>
 
 </div>
 
 
+<div class="rank">
 
-<div class="card ranking">
-
-<h3>👑 برترین فعالان</h3>
-
-
-<div id="ranking-list">
-
-در حال دریافت رتبه‌ها...
+<span>🥈</span>
+<p>کاربر دوم</p>
+<b>900 امتیاز</b>
 
 </div>
 
 
-</div>
+<div class="rank">
 
-
-
-<div class="card">
-
-<h3>✨ راه‌ های کسب امتیاز</h3>
-
-<button onclick="dailyScore()">
-📅 ورود روزانه +5 امتیاز
-</button>
-
-<button onclick="channelScore()">
-📚 بازدید از کانال‌ها +10 امتیاز
-</button>
-
-<button onclick="inviteScore()">
-👥 دعوت دوستان +50 امتیاز
-</button>
+<span>🥉</span>
+<p>کاربر سوم</p>
+<b>700 امتیاز</b>
 
 </div>
 
+</div>
 
 </section>
 
 
 
-<div class="card invite-card" onclick="showInviteInfo('link')">
-
-<h3>🔗 لینک دعوت شما</h3>
-
-<p>
-لینک اختصاصی خود را دریافت و با دوستان شریک کنید.
-</p>
-
-</div>
-
-
-
-<div class="card invite-card" onclick="showInviteInfo('stats')">
-
-<h3>⭐ آمار دعوت</h3>
-
-<p>
-تعداد دعوت‌ ها و امتیاز های کسب شده را مشاهده کنید.
-</p>
-
-</div>
-
-
+<!-- INVITE PAGE -->
 
 <section id="invite" class="page">
 
-<h2>👥 دعوت دوستان</h2>
+<h2>🔗 دعوت دوستان</h2>
 
-<div class="card invite-card">
+<div class="card">
 
-<h3>🔗 لینک دعوت شما</h3>
-
-<p id="invite-link">
-در حال ساخت لینک...
+<p>
+دوستان خود را دعوت کنید و امتیاز دریافت کنید.
 </p>
 
-<button onclick="shareInvite()">
-📤 اشتراک گذاری لینک
+
+<button onclick="copyInvite()">
+کپی لینک دعوت
 </button>
 
-</div>
 
-<div class="card invite-card" onclick="showInviteInfo('stats')">
-
-<h3>⭐ آمار دعوت</h3>
-
-<p>
-تعداد دعوت‌ ها و امتیاز های شما را مشاهده کنید.
+<p id="inviteText">
+https://illuminati-app.github.io/invite
 </p>
 
-</div>
-
-<div class="card invite-card" onclick="showInviteInfo('points')">
-
-<h3>🎁 چگونه امتیاز کسب کنیم ؟</h3>
-
-<p>
-روش‌ های دریافت امتیاز و افزایش رتبه خود را ببینید.
-</p>
 
 </div>
 
 </section>
-  
+
+
+
+<!-- PROFILE PAGE -->
+
 <section id="profile" class="page">
 
 <h2>👤 پروفایل</h2>
@@ -272,106 +78,76 @@
 
 <div class="card">
 
-<h3>✏️ نام شما</h3>
-
-<input 
-id="user-name" 
-type="text" 
-placeholder="نام خود را وارد کنید">
-
-<button onclick="saveName()">
-ذخیره نام
-</button>
-
+<div class="avatar">
+❤️
 </div>
 
-...
-</section>
 
+<h3>نام کاربر</h3>
 
-
-<div class="card">
-
-<h3>⭐ امتیاز شما</h3>
-
-<p id="profile-score">
-0 امتیاز
+<p>
+سطح: تازه وارد
 </p>
 
-</div>
-
-
-
-<div class="card">
-
-<h3>👥 تعداد دعوت‌ها</h3>
-
-<p id="profile-invites">
-0 دعوت
+<p>
+امتیاز: 0
 </p>
 
-</div>
-
-
-
-<div class="card">
-
-<h3>🏅 رتبه شما</h3>
-
-<p id="profile-rank">
-تازه وارد
+<p>
+تعداد دعوت: 0
 </p>
 
-</div>
 
+</div>
 
 </section>
 
 
-</main>
-
-
-
+<!-- BOTTOM MENU -->
 
 <nav class="menu">
 
-<button data-page="home" onclick="showPage('home')">
+<button onclick="showPage('home')">
 🏠
-<span>خانه</span>
+<br>
+خانه
 </button>
 
 
-<button data-page="channels" onclick="showPage('channels')">
-📚
-<span>کانال‌ ها</span>
-</button>
-
-
-<button data-page="scores" onclick="showPage('scores')">
+<button onclick="showPage('scores')">
 🏆
-<span>امتیاز</span>
+<br>
+امتیاز
 </button>
 
 
-<button data-page="invite" onclick="showPage('invite')">
-👥
-<span>دعوت</span>
+<button onclick="showPage('invite')">
+🔗
+<br>
+دعوت
 </button>
 
 
-<button data-page="profile" onclick="showPage('profile')">
+<button onclick="showPage('profile')">
 👤
-<span>پروفایل</span>
+<br>
+پروفایل
 </button>
+
 
 </nav>
 
 
-</div>
+<script>
 
+function copyInvite(){
 
-<script src="app.js"></script>
+let text=document.getElementById("inviteText").innerText;
 
-</body>
+navigator.clipboard.writeText(text);
 
-</html>
+alert("لینک دعوت کپی شد");
+
+}
+
+</script>

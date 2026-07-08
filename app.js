@@ -488,9 +488,14 @@ found.score = myScore;
 
 }else{
 
+let myName = localStorage.getItem("userName") || "کاربر";
+
+
 users.push({
 
 id: myId,
+
+name: myName,
 
 score: myScore
 

@@ -14,6 +14,7 @@ min-height:100vh;
 }
 
 
+
 .app{
 
 max-width:500px;
@@ -25,7 +26,7 @@ padding-bottom:90px;
 
 
 
-/* header */
+/* Header */
 
 .top{
 
@@ -34,12 +35,12 @@ padding:35px 20px;
 
 background:
 linear-gradient(
-135deg,
-#111,
+180deg,
+#16001f,
 #050505
 );
 
-border-bottom:1px solid rgba(255,215,0,.2);
+border-bottom:1px solid #333;
 
 }
 
@@ -49,29 +50,21 @@ border-bottom:1px solid rgba(255,215,0,.2);
 font-size:32px;
 margin:0;
 
-color:#d4af37;
+color:#ff3c8a;
 
 }
 
 
 .top p{
 
-font-size:18px;
-color:#aaa;
-
-}
-
-
-.top span{
-
-font-size:14px;
-color:#ddd;
+color:#bbb;
 
 }
 
 
 
-/* pages */
+
+/* Pages */
 
 .page{
 
@@ -89,42 +82,146 @@ display:block;
 
 
 
-h2{
 
-color:#d4af37;
-text-align:center;
-
-}
-
-
-
-/* cards */
-
+/* Cards */
 
 .card{
 
-background:
+background:#111;
 
-rgba(255,255,255,.05);
-
-border:1px solid rgba(212,175,55,.25);
-
-border-radius:18px;
+border-radius:20px;
 
 padding:20px;
 
-margin:15px 0;
+margin-bottom:20px;
 
-text-align:center;
+border:1px solid #222;
 
-backdrop-filter:blur(10px);
+box-shadow:
+0 0 15px rgba(255,60,138,.15);
+
+}
+
+
+.card h3{
+
+color:#ff3c8a;
 
 }
 
 
 
-/* bottom menu */
 
+
+/* Buttons */
+
+button{
+
+background:#ff3c8a;
+
+color:white;
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:30px;
+
+font-size:15px;
+
+cursor:pointer;
+
+}
+
+
+
+
+
+/* Channel cards */
+
+.channel{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:15px;
+
+background:#0d0d0d;
+
+border-radius:18px;
+
+margin-bottom:15px;
+
+}
+
+
+.channel img{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+}
+
+
+
+
+/* Ranking */
+
+.rank{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+background:#0b0b0b;
+
+padding:15px;
+
+border-radius:15px;
+
+margin:10px 0;
+
+}
+
+
+
+
+/* Avatar */
+
+.avatar{
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+background:#ff3c8a;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:35px;
+
+margin:auto;
+
+}
+
+
+
+
+/* Bottom Menu */
 
 .menu{
 
@@ -132,297 +229,44 @@ position:fixed;
 
 bottom:0;
 
-right:0;
-
 left:0;
+
+right:0;
 
 max-width:500px;
 
 margin:auto;
 
+height:75px;
+
+background:#090909;
+
+border-top:1px solid #222;
+
 display:flex;
 
 justify-content:space-around;
 
-background:#0b0b0b;
-
-border-top:1px solid rgba(212,175,55,.3);
-
-padding:8px 0;
+align-items:center;
 
 }
-
 
 
 .menu button{
 
 background:none;
 
-border:none;
+font-size:13px;
+
+padding:5px;
 
 color:white;
 
-font-size:20px;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-cursor:pointer;
-
 }
 
 
+.menu button:hover{
 
-.menu span{
-
-font-size:11px;
-
-margin-top:4px;
-
-color:#ccc;
-
-}
-
-
-
-/* animation */
-
-
-.page{
-
-animation:fade .4s;
-
-}
-
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-
-transform:translateY(10px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-#channel-list{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-
-.channel-card{
-
-background:
-linear-gradient(
-145deg,
-rgba(212,175,55,0.12),
-rgba(255,255,255,0.04)
-);
-
-border:1px solid rgba(212,175,55,0.35);
-
-border-radius:22px;
-
-padding:22px;
-
-text-align:center;
-
-transition:0.3s;
-
-box-shadow:
-0 10px 30px rgba(0,0,0,0.4);
-
-}
-
-
-.channel-card:hover{
-
-transform:translateY(-5px);
-
-border-color:#d4af37;
-
-}
-
-
-
-.channel-card h3{
-
-color:#d4af37;
-
-font-size:20px;
-
-margin-bottom:12px;
-
-}
-
-
-
-.channel-card p{
-
-color:#ddd;
-
-font-size:14px;
-
-line-height:1.8;
-
-}
-
-
-
-.channel-card button{
-
-background:#d4af37;
-
-color:#000;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:30px;
-
-font-size:15px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-margin-top:10px;
-
-}
-
-
-.channel-card button:hover{
-
-background:#fff;
-
-}
-.menu button:hover,
-.menu button:focus{
-
-color:#d4af37;
-
-}
-
-
-.menu button.active{
-
-color:#d4af37;
-
-}
-
-
-.invite-btn{
-
-background:#d4af37;
-
-color:#000;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:30px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-  }
-..menu button.active{
-
-color:#d4af37;
-
-transform:translateY(-5px);
-
-}
-
-.menu button.active span{
-
-color:#d4af37;
-
-}
-.rank{
-
-padding:15px;
-margin:10px 0;
-border-radius:15px;
-text-align:center;
-font-size:18px;
-font-weight:bold;
-
-}
-
-
-.rank:first-child{
-
-transform:scale(1.03);
-
-}
-
-
-
-.gold{
-
-background:linear-gradient(
-135deg,
-#ffd700,
-#b8860b
-);
-
-color:#000;
-
-}
-
-
-
-.silver{
-
-background:linear-gradient(
-135deg,
-#eeeeee,
-#888888
-);
-
-color:#000;
-
-}
-
-
-
-.bronze{
-
-background:linear-gradient(
-135deg,
-#cd7f32,
-#8b4513
-);
-
-color:white;
-
-}
-
-
-
-.ranking h3{
-
-text-align:center;
-
-margin-bottom:20px;
+color:#ff3c8a;
 
 }

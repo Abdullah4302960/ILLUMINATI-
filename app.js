@@ -571,3 +571,56 @@ document.addEventListener("DOMContentLoaded",function(){
 loadRanking();
 
 });
+// ذخیره نام کاربر
+
+function saveName(){
+
+let name = document.getElementById("user-name").value;
+
+
+if(name.trim() === ""){
+
+alert("لطفاً نام خود را وارد کنید");
+
+return;
+
+}
+
+
+localStorage.setItem("userName", name);
+
+
+alert("✅ نام شما ذخیره شد");
+
+
+loadProfile();
+
+}
+
+
+
+// بارگذاری نام در پروفایل
+
+function loadName(){
+
+let name = localStorage.getItem("userName") || "";
+
+
+let input = document.getElementById("user-name");
+
+
+if(input){
+
+input.value = name;
+
+}
+
+}
+
+
+
+document.addEventListener("DOMContentLoaded",function(){
+
+loadName();
+
+});

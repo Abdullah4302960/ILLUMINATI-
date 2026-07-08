@@ -386,3 +386,110 @@ alert(
 
 
 }
+// تغییر صفحات اپ
+
+function showPage(pageId){
+
+let pages = document.querySelectorAll(".page");
+
+pages.forEach(function(page){
+
+page.classList.remove("active");
+
+});
+
+
+let selectedPage = document.getElementById(pageId);
+
+
+if(selectedPage){
+
+selectedPage.classList.add("active");
+
+}
+
+
+let buttons = document.querySelectorAll(".menu button");
+
+
+buttons.forEach(function(btn){
+
+btn.classList.remove("active");
+
+});
+
+
+}
+
+
+
+// سیستم امتیاز
+
+let userScore = localStorage.getItem("score");
+
+
+if(!userScore){
+
+userScore = 0;
+
+localStorage.setItem("score",userScore);
+
+}
+
+
+
+function addScore(amount){
+
+userScore = Number(userScore) + amount;
+
+localStorage.setItem("score",userScore);
+
+
+let scoreBox = document.getElementById("userScore");
+
+
+if(scoreBox){
+
+scoreBox.innerText = userScore;
+
+}
+
+}
+
+
+
+// سیستم دعوت
+
+function createInvite(){
+
+let link = window.location.href + "?invite=user";
+
+
+navigator.clipboard.writeText(link);
+
+
+alert("لینک دعوت شما کپی شد");
+
+}
+
+
+
+// بارگذاری اطلاعات کاربر
+
+window.onload=function(){
+
+
+let scoreBox = document.getElementById("userScore");
+
+
+if(scoreBox){
+
+scoreBox.innerText = userScore;
+
+}
+
+
+showPage("home");
+
+
+}

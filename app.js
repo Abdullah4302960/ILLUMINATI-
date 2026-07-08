@@ -59,7 +59,7 @@ channels.forEach(function(channel){
 
 let card = document.createElement("div");
 
-card.className="card";
+card.className="channel-card";
 
 
 card.innerHTML = `
